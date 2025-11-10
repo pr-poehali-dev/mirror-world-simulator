@@ -20,7 +20,7 @@ export default function WorldVisualization() {
   ];
 
   return (
-    <section className="py-24 px-6 relative">
+    <section id="world-section" className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#8B5CF6] to-[#0EA5E9] bg-clip-text text-transparent">

@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import { useGameStore } from '@/store/gameStore';
 
 interface HeroSectionProps {
   scrollY: number;
@@ -7,6 +8,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ scrollY }: HeroSectionProps) {
   const parallaxOffset = scrollY * 0.5;
+  const setShowCharacterCreation = useGameStore((state) => state.setShowCharacterCreation);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -42,6 +44,7 @@ export default function HeroSection({ scrollY }: HeroSectionProps) {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] hover:from-[#7C3AED] hover:to-[#C026D3] text-white px-8 py-6 text-lg rounded-full shadow-lg shadow-purple-500/50 hover-scale"
+              onClick={() => setShowCharacterCreation(true)}
             >
               <Icon name="Play" className="mr-2" size={24} />
               Начать Жизнь

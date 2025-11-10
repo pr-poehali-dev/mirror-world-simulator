@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Create new player",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тестовый Игрок"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "money": 25000
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get player data",
+      "method": "GET",
+      "path": "/?id=1",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "money": 25000
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
